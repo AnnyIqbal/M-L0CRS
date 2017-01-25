@@ -15,7 +15,6 @@ export class SignupComponent {
 
 // @select(['User', 'status'])
 // user$: Observable<any>;
-  options: string[] = ['admin', 'company', 'student'];
   constructor(
     // private af: AngularFire,
     private route: Router,
