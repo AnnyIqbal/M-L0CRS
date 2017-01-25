@@ -1,7 +1,11 @@
-<md-slide-toggle (change)="stdlist = !stdlist" color="primary">
-  {{stdlist}}
+<md-slide-toggle color="primary" [checked]="isChecked" (change)="isChecked=!isChecked">
+    {{ isChecked ? 'Students\' List' : 'Company\'s List' }}
 </md-slide-toggle>
-<div *ngIf="stdlist">
+<div *ngIf="isChecked">
+  <h3> Students' List </h3>
+  <table></table>
 </div>
-<div *ngIf="!stdlist">
+<div *ngIf="!isChecked">
+  <h3> Company's List </h3>
+
 </div>

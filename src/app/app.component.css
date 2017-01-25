@@ -23,10 +23,12 @@
 }
 .flex {
     display: inline-flex;
-    width: 95vw;
+    width: 100%;
 }
 .container {
     /*margin-left: 20px;*/
+    width: 90vw;
+    height: 75vh;
 }
 .header {
     display: inline-flex;

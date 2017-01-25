@@ -20,7 +20,13 @@
 			<small [hidden]="!uname.errors?.required || (uname.pristine && !SignUpForm._submitted)" class="alert alert-danger">
                 Name is required!
             </small>
-                <br>
+                <br><br>
+            <md-radio-group>
+                <md-radio-button *ngFor="let o of options" [value]="o[0]">
+                    {{o}}
+                </md-radio-button>
+            </md-radio-group>
+                <br><br>
             <md-input required
                 [dividerColor]=" (!emlid.valid || emlid.pristine) ? 'warn':'primary' " 
                 placeholder="Email" 
