@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./view-list.component.css']
 })
 export class ViewListComponent implements OnInit {
-
+  // stdlist: string = isChecked? 'Students\' List' : 'Company\'s List';
   constructor() { }
 
   ngOnInit() {
