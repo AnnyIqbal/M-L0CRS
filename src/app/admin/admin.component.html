@@ -13,7 +13,7 @@
   <app-view-list></app-view-list>
 </div>
 <div *ngIf="click === 'addCompany'">
-  <app-add-company></app-add-company>
+  <app-add-company (changeTab) = "out($event)"></app-add-company>
 </div>
 <div *ngIf="click === 'notifications'">
   <app-notifications></app-notifications>

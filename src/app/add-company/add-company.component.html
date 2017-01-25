@@ -1,3 +1,83 @@
-<p>
-  add-company works!
-</p>
+<!--<div *ngIf="!list">
+  <md-card>
+    <md-card-title> 
+      Add New Company
+    </md-card-title>
+    <md-card-content>
+      <form #notificationForm (ngSubmit)="AddNotice(notice.value)">
+        <textarea class='textarea' placeholder='Add Notice' #notice dividerColor='primary' rows="7" cols="35"></textarea>
+        <md-input dividerColor='primary' placeholder='Add Notice' #notice></md-input>
+        <br>
+        <button type='submit' md-mini-fab color='primary'>
+          <i class="material-icons">send</i>
+        </button>
+      </form>
+    </md-card-content>
+  </md-card>
+</div>-->
+<div>
+  <md-card>
+    <md-card-title> 
+      Add New Company
+    </md-card-title>
+    <md-card-content>
+      <form novalidate #CompanyForm="ngForm" (ngSubmit)='SignUp(CompanyForm.value)'>
+            <md-input required
+                [dividerColor]=" (!uname.valid || uname.pristine) ? 'warn':'primary' " 
+                placeholder="Company Name" 
+                align="start" 
+                name="uname"
+                type="text"
+                #uname="ngModel"
+                [(ngModel)]="username"
+                pattern="[a-z]+ [a-z]{3,12}">
+            </md-input>
+            <small [hidden]="uname.valid || (uname.pristine && !CompanyForm._submitted)" class="alert alert-danger">
+                Invalid Name! 
+            </small>
+			<small [hidden]="!uname.errors?.required || (uname.pristine && !CompanyForm._submitted)" class="alert alert-danger">
+                Name is required!
+            </small>
+                <br>
+            <md-input required
+                [dividerColor]=" (!emlid.valid || emlid.pristine) ? 'warn':'primary' " 
+                placeholder="Company Email" 
+                align="start" 
+                name="emlid"
+                type="email"
+                #emlid="ngModel"
+                [(ngModel)]="emailUp"
+                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+            </md-input>
+            <small [hidden]="emlid.valid || (emlid.pristine && !CompanyForm._submitted)" class="alert alert-danger">
+                Invalid Email! 
+            </small>
+			<small [hidden]="!emlid.errors?.required || (emlid.pristine && !CompanyForm._submitted)" class="alert alert-danger">
+                Email is required!
+            </small>
+                <br>
+            <md-input required
+                [dividerColor]="(!pcode.valid || pcode.pristine) ? 'warn':'primary'" 
+                placeholder="Password" 
+                align="start" 
+                name="pcode"
+                type="password" 
+                #pcode="ngModel"
+                [(ngModel)]="passwordUp"
+                minlength="6">
+            </md-input>
+            <small [hidden]="pcode.valid || (pcode.pristine && !CompanyForm._submitted)" class="alert alert-danger">
+                Password must be 6 characters long!
+            </small>
+            <small [hidden]="!pcode.errors?.required || (pcode.pristine && !CompanyForm._submitted)" class="alert alert-danger">
+                Password is required!
+            </small>
+                <br><br>
+            <button md-raised-button color="primary" type="submit" [disabled]="!emlid.valid || !pcode.valid"> 
+                Create Account
+            </button>
+            <br>
+        </form>
+    </md-card-content>
+  </md-card>
+</div>

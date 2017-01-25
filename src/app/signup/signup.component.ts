@@ -23,7 +23,7 @@ export class SignupComponent {
   ) {}
 
   SignUp(user) {
-console.log('signup copmonent');
+    console.log('signup copmonent');
   }
 /*
     // 'signup' action dispatched from redux

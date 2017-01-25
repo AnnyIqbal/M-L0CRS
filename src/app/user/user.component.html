@@ -1,6 +1,6 @@
-<md-tab-group [selectedIndex]="0">
+<md-tab-group [selectedIndex]="index">
   <md-tab label="Admin Panel">
-    <app-admin></app-admin>
+    <app-admin (changeTab) = "index=1"></app-admin>
   </md-tab>
   <md-tab label="Company Panel">
     <app-company></app-company>

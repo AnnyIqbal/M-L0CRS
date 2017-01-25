@@ -1,5 +1,4 @@
-import { Component } from '@angular/core';
-import {ActivatedRoute, Router, Routes} from '@angular/router';
+import { Component, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-admin',
@@ -8,6 +7,9 @@ import {ActivatedRoute, Router, Routes} from '@angular/router';
 })
 export class AdminComponent {
   click: string = 'viewList';
-  constructor(private r: Router, private ar: ActivatedRoute){}
-
+  @Output() changeTab = new EventEmitter<any>();
+  
+  out(event: any) {
+    this.changeTab.emit(event);
+  }
 }

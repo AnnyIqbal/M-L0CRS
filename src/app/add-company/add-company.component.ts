@@ -1,15 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-add-company',
   templateUrl: './add-company.component.html',
   styleUrls: ['./add-company.component.css']
 })
-export class AddCompanyComponent implements OnInit {
+export class AddCompanyComponent {
 
-  constructor() { }
+  @Output() changeTab = new EventEmitter<any>();
 
-  ngOnInit() {
+  SignUp(user, event) {
+    console.log('company signup');
+    this.changeTab.emit(event);
   }
-
 }

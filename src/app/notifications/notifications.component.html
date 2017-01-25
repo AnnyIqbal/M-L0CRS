@@ -15,6 +15,9 @@
 </div>
 <div *ngIf="!list">
   <md-card>
+    <md-card-title> 
+      Add New Notice Here
+    </md-card-title>
     <md-card-content>
       <form #notificationForm (ngSubmit)="AddNotice(notice.value)">
         <textarea class='textarea' placeholder='Add Notice' #notice dividerColor='primary' rows="7" cols="35"></textarea>
