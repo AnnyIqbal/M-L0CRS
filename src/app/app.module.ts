@@ -7,7 +7,6 @@ import { RouterModule, Routes } from '@angular/router';
 import 'hammerjs';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
-import { SearchComponent } from './search/search.component';
 import { UserComponent } from './user/user.component';
 import { BookComponent } from './book/book.component';
 import { AddToCartComponent } from './add-to-cart/add-to-cart.component';
@@ -27,7 +26,6 @@ import { NotificationsComponent } from './notifications/notifications.component'
 const routes: Routes =[
   { path: '', pathMatch: 'full', redirectTo: 'home' },
   { path: 'home', component: HomeComponent },
-  { path: 'search', component: SearchComponent },
   { path: 'person', component: UserComponent },
   { path: 'book', component: BookComponent },
   { path: 'add_shopping_cart', component: AddToCartComponent },
@@ -41,7 +39,6 @@ const routes: Routes =[
   declarations: [
     AppComponent,
     HomeComponent,
-    SearchComponent,
     UserComponent,
     BookComponent,
     AddToCartComponent,

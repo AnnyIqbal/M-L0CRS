@@ -8,7 +8,4 @@ import { Component, Input } from '@angular/core';
 export class UserComponent {
   @Input() changeTab;
   index: number = 0;
-  constructor() { }
-
-
 }

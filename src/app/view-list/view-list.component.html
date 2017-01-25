@@ -3,9 +3,51 @@
 </md-slide-toggle>
 <div *ngIf="isChecked">
   <h3> Students' List </h3>
-  <table></table>
+  <table>
+    <thead>
+      <tr>
+        <th> S.No. </th>
+        <th> Student Name </th>
+        <th> Gender </th>
+        <th> Degree Title </th>
+        <th> CGPA </th>
+        <th> Year of Passing </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let std of students; let i = index">
+        <td> {{i}} </td>
+        <td> {{std.name}} </td>
+        <td> {{std.gender}} </td>
+        <td> {{std.degreeTitle}} </td>
+        <td> {{std.cgpa}} </td>
+        <td> {{std.yearOfPassing}} </td>
+      </tr>
+    </tbody>
+  </table>
 </div>
 <div *ngIf="!isChecked">
   <h3> Company's List </h3>
-
+  <table>
+    <thead>
+      <tr>
+        <th> S.No. </th>
+        <th> Company Name </th>
+        <th> Business Domain </th>
+        <th> Architecture </th>
+        <th> Location </th>
+        <th> Number of Vacancies </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let co of companies; let i = index">
+        <td> {{i}} </td>
+        <td> {{co.name}} </td>
+        <td> {{co.domain}} </td>
+        <td> {{co.architecture}} </td>
+        <td> {{co.location}} </td>
+        <td> {{co.numberOfVacancies}} </td>
+      </tr>
+    </tbody>
+  </table>
 </div>

@@ -3,7 +3,7 @@ import { Observable } from 'rxjs';
 // import { select } from 'ng2-redux';
 import { Component } from '@angular/core';
 // import { AngularFire } from 'angularfire2';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 // import { FirebaseAuth } from 'angularfire2/auth';
 
 @Component({
@@ -15,16 +15,30 @@ export class SignupComponent {
 
 // @select(['User', 'status'])
 // user$: Observable<any>;
+
+  index: number;
   constructor(
     // private af: AngularFire,
     private route: Router,
+    private ar: ActivatedRoute,
     // private a: MyActions
   ) {}
 
-  SignUp(user) {
-    console.log('signup copmonent');
-    //userType.value ki based p usko user k relevant tab p route krwado
+  SignUp(user, userType) {
+    console.log('signup copmonent', userType);
+    this.routeTo('person');
+    if (userType === 'Company') {
+      this.index = 1;
+    }
+    else if (userType === 'Student') {
+      this.index = 2;
+    }
   }
+
+  routeTo(x) {
+    this.route.navigate([x], { queryParams: {index: this.index} } );
+  }
+
 /*
     // 'signup' action dispatched from redux
     this.a.signUp(user);
