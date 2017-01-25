@@ -7,10 +7,7 @@ import {ActivatedRoute, Router, Routes} from '@angular/router';
   styleUrls: ['./admin.component.css']
 })
 export class AdminComponent {
-
+  click: string = 'viewList';
   constructor(private r: Router, private ar: ActivatedRoute){}
-  routeTo(x) {
-    this.r.navigate([ { outlets: { main: x } }]);
-  }
 
 }

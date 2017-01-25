@@ -1,17 +1,20 @@
-<p>
-  admin works!
-</p>
-<div>
-  <router-outlet name='main'></router-outlet>
-</div>
 <div class="toolbar">
   <md-toolbar color="accent">
     <span>Toolbar</span>
     <span class="example-fill-remaining-space"></span>
     <span>
-      <i class="material-icons" (click)="routeTo('viewList')">view_list</i>
-      <i class="material-icons" (click)="routeTo('addCompany')">add</i>
-      <i class="material-icons" (click)="routeTo('notifications')">notifications</i>
+      <i class="material-icons" (click)="click = 'viewList'">view_list</i>
+      <i class="material-icons" (click)="click = 'addCompany'">add</i>
+      <i class="material-icons" (click)="click = 'notifications'">notifications</i>
     </span>
   </md-toolbar>
+</div>
+<div *ngIf="click === 'viewList'">
+  <app-view-list></app-view-list>
+</div>
+<div *ngIf="click === 'addCompany'">
+  <app-add-company></app-add-company>
+</div>
+<div *ngIf="click === 'notifications'">
+  <app-notifications></app-notifications>
 </div>

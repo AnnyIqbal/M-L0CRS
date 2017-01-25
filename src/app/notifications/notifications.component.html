@@ -1,3 +1,30 @@
-<p>
-  notifications works!
-</p>
+<div *ngIf="list">
+<h2>Notice Board</h2>
+<ul>
+  <li *ngFor="let n of notifications" class="unstyle"> 
+    <md-card>
+      <md-card-content> 
+        {{n}}
+      </md-card-content>
+    </md-card>
+  </li>
+</ul>
+<button md-mini-fab color='warn' (click)="list = !list">
+  <i class="material-icons">add</i>
+</button>
+</div>
+<div *ngIf="!list">
+  <md-card>
+    <md-card-content>
+      <form #notificationForm (ngSubmit)="AddNotice(notice.value)">
+        <textarea class='textarea' placeholder='Add Notice' #notice dividerColor='primary' rows="7" cols="35"></textarea>
+        <!--<md-input dividerColor='primary' placeholder='Add Notice' #notice></md-input>-->
+        <br>
+        <button type='submit' md-mini-fab color='primary'>
+          <i class="material-icons">send</i>
+        </button>
+      </form>
+    </md-card-content>
+  </md-card>
+</div>
+

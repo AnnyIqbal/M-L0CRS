@@ -1,15 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-notifications',
   templateUrl: './notifications.component.html',
   styleUrls: ['./notifications.component.css']
 })
-export class NotificationsComponent implements OnInit {
+export class NotificationsComponent {
 
-  constructor() { }
+  notifications: string[] = ['first notification on notice board'];
+  list: boolean = true;
 
-  ngOnInit() {
+  AddNotice(newNotice) {
+    this.notifications.push(newNotice);
+    this.list = true;
   }
 
 }

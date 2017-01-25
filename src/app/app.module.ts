@@ -34,10 +34,7 @@ const routes: Routes =[
   { path: 'favorite', component: FavoriteComponent },
   { path: 'shopping_cart', component: BookShelfComponent },
   { path: 'account_balance', component: LibraryComponent },
-  { path: 'location_on', component: LocatorComponent },
-  { path: 'viewList', component: ViewListComponent, outlet: 'main' },
-  { path: 'addCompany', component: AddCompanyComponent, outlet: 'main' },
-  { path: 'notifications', component: NotificationsComponent, outlet: 'main' }
+  { path: 'location_on', component: LocatorComponent }
 ];
 
 @NgModule({
