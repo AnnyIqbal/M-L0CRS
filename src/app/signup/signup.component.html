@@ -21,7 +21,7 @@
                 Name is required!
             </small>
                 <br><br>
-            <md-radio-group> Account Type
+            <md-radio-group #userType> Account Type <br>
                 <md-radio-button *ngFor="let o of options" [value]="o[0]">
                     {{o}}
                 </md-radio-button>

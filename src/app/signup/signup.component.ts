@@ -24,6 +24,7 @@ export class SignupComponent {
 
   SignUp(user) {
     console.log('signup copmonent');
+    //userType.value ki based p usko user k relevant tab p route krwado
   }
 /*
     // 'signup' action dispatched from redux
