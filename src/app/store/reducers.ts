@@ -42,9 +42,10 @@ export const initialTaskState = {
 */
 export const initialUserState = {
     User: {
-        name: '',
-        status: ''
-    }
+        name: 'null',
+        status: 'signedout'
+    },
+    abc: 'abc'
 };
 
 export const UserReducer = function(state = initialUserState, action: { type: string, payload?: any}) {

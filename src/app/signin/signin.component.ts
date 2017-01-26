@@ -1,4 +1,3 @@
-import { Observable } from 'rxjs';
 import { select } from 'ng2-redux';
 import { MyActions } from './../store/actions';
 import { Component, OnInit } from '@angular/core';
@@ -13,15 +12,12 @@ import { Router } from '@angular/router';
 })
 export class SigninComponent {
 
-@select(['User', 'status'])
-user$: Observable<any>; // gets User State of the app
-
   index: number;
   constructor(
       private af: AngularFire,
       private route: Router,
       private a: MyActions
-    ) {}
+    ) { }
 
   onSignIn(value) {
     // 'signin' action dispatched from redux
@@ -33,7 +29,7 @@ user$: Observable<any>; // gets User State of the app
           {provider: AuthProviders.Password, method: AuthMethods.Password}
         ).then((res) => {
             alert('Sign In Successful!');
-            this.route.navigate(['dashboard']);
+            this.route.navigate(['perm_identity']);
         }, (err) => {
             alert(err);
         });
