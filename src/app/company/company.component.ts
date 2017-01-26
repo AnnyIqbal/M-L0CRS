@@ -10,10 +10,5 @@ export class CompanyComponent {
   isAdmin: boolean = false;
   isStd: boolean = false;
   isCompany: boolean = true;
-  // @Output() changeTab = new EventEmitter<any>();
-
-  // out(event: any) {
-  //   this.changeTab.emit(event);
-  // }
 
 }

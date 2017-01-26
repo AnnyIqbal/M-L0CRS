@@ -10,8 +10,9 @@ export class UploadResumeComponent  {
   @Output() changeTab = new EventEmitter<any>();
 
   UploadResume(formValue, event) {
+    console.log(formValue);
     alert('Congrats! Profile Created & Resume Uploaded');
-    this.changeTab.emit(event);
+    // this.changeTab.emit(event);
   }
 
 }

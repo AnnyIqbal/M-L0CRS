@@ -9,10 +9,10 @@
       <tr>
         <th> S.No. </th>
         <th> Student Name </th>
-        <th> Gender </th>
+        <th> Contact Number </th>
+        <th> Email </th>
         <th> Degree Title </th>
         <th> CGPA </th>
-        <th> Year of Passing </th>
         <th></th>
         <th></th>
       </tr>
@@ -21,10 +21,10 @@
       <tr *ngFor="let std of students; let i = index">
         <td> {{i}} </td>
         <td> {{std.name}} </td>
-        <td> {{std.gender}} </td>
+        <td> {{std.email}} </td>
+        <td> {{std.contactNum}} </td>
         <td> {{std.degreeTitle}} </td>
         <td> {{std.cgpa}} </td>
-        <td> {{std.yearOfPassing}} </td>
         <td> 
           <button md-mini-fab color="primary">
             <i class="material-icons"> details </i>

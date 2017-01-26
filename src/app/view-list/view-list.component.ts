@@ -14,10 +14,10 @@ export class ViewListComponent {
   students: [
     {
     name: string,
-    gender: string,
+    email: string,
+    contactNum: number
     degreeTitle: string,
-    cgpa: number,
-    yearOfPassing: number
+    cgpa: number
   }];
 
   companies: [

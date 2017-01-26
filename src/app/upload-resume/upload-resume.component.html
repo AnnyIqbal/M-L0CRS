@@ -44,14 +44,42 @@
                 name="phone"
                 type="number" 
                 #phone="ngModel"
-                [(ngModel)]="passwordUp">
-                <!--minlength="11"-->
+                [(ngModel)]="ContactNum">
             </md-input>
-            <!--<small [hidden]="phone.valid || (phone.pristine && !ResumeForm._submitted)" class="alert alert-danger">
-                Contact Number must be 11 characters long!
-            </small>-->
             <small [hidden]="!phone.errors?.required || (phone.pristine && !ResumeForm._submitted)" class="alert alert-danger">
                 Contact Number is required!
+            </small>
+                <br>
+            <md-input required
+                [dividerColor]=" (!degreeTitle.valid || degreeTitle.pristine) ? 'warn':'primary' " 
+                placeholder="Degree Title" 
+                align="start" 
+                name="degreeTitle"
+                type="text"
+                #degreeTitle="ngModel"
+                [(ngModel)]="degTitle">
+            </md-input>
+            <small [hidden]="degreeTitle.valid || (degreeTitle.pristine && !ResumeForm._submitted)" class="alert alert-danger">
+                Invalid Degree Title! 
+            </small>
+			<small [hidden]="!degreeTitle.errors?.required || (degreeTitle.pristine && !ResumeForm._submitted)" class="alert alert-danger">
+                Degree Title is required!
+            </small>
+                <br>
+            <md-input required
+                [dividerColor]=" (!cgpa.valid || cgpa.pristine) ? 'warn':'primary' " 
+                placeholder="CGPA" 
+                align="start" 
+                name="cgpa"
+                type="number"
+                #cgpa="ngModel"
+                [(ngModel)]="marksAsGP">
+            </md-input>
+            <small [hidden]="cgpa.valid || (cgpa.pristine && !ResumeForm._submitted)" class="alert alert-danger">
+                Invalid CGPA! 
+            </small>
+			<small [hidden]="!cgpa.errors?.required || (cgpa.pristine && !ResumeForm._submitted)" class="alert alert-danger">
+                CGPA is required!
             </small>
                 <br><br>
             <button md-raised-button color="primary" type="submit" [disabled]="!uname.valid || !emlid.valid">
