@@ -10,7 +10,7 @@
   </md-toolbar>
 </div>
 <div *ngIf="click === 'viewList'">
-  <app-view-list [isAdmin] = "true"></app-view-list>
+  <app-view-list [isAdmin]="isAdmin" [isStd]="isStd" [isCompany]="isCompany"></app-view-list>
 </div>
 <div *ngIf="click === 'addCompany'">
   <app-add-company (changeTab) = "out($event)"></app-add-company>

@@ -1,4 +1,4 @@
-import { Component, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
@@ -8,6 +8,9 @@ import {ActivatedRoute, Router} from '@angular/router';
 })
 export class AdminComponent {
   click: string = 'viewList';
+  isAdmin: boolean = true;
+  isStd: boolean = false;
+  isCompany: boolean = false;
   @Output() changeTab = new EventEmitter<any>();
 
   out(event: any) {

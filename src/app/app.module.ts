@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { MaterialModule } from '@angular/material';
 import { RouterModule, Routes } from '@angular/router';
+import { AngularFireModule, AuthProviders, AuthMethods } from 'angularfire2';
 import 'hammerjs';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -23,15 +24,26 @@ import { ViewListComponent } from './view-list/view-list.component';
 import { AddCompanyComponent } from './add-company/add-company.component';
 import { NotificationsComponent } from './notifications/notifications.component';
 
+const myFirebaseConfig = {
+    apiKey: 'AIzaSyCHEIyUXYy0ZpJdG5N8bH2mAZd52xZZRZA',
+    authDomain: 'l0crs-7c288.firebaseapp.com',
+    databaseURL: 'https://l0crs-7c288.firebaseio.com',
+    storageBucket: 'l0crs-7c288.appspot.com',
+    messagingSenderId: '85179573049'
+};
+
+const myFirebaseAuthConfig = {
+  provider: AuthProviders.Google,
+  method: AuthMethods.Redirect
+};
+
 const routes: Routes =[
   { path: '', pathMatch: 'full', redirectTo: 'home' },
   { path: 'home', component: HomeComponent },
   { path: 'dashboard', component: UserComponent },
-  { path: 'book', component: BookComponent },
-  { path: 'add_shopping_cart', component: AddToCartComponent },
-  { path: 'favorite', component: FavoriteComponent },
-  { path: 'shopping_cart', component: BookShelfComponent },
-  { path: 'account_balance', component: LibraryComponent },
+  { path: 'card_travel', component: CompanyComponent },
+  { path: 'perm_identity', component: StudentComponent },
+  { path: 'person', component: AdminComponent },
   { path: 'notifications', component: NotificationsComponent }
 ];
 
@@ -61,6 +73,7 @@ const routes: Routes =[
     HttpModule,
     MaterialModule.forRoot(),
     RouterModule.forRoot(routes),
+    AngularFireModule.initializeApp(myFirebaseConfig, myFirebaseAuthConfig)
   ],
   providers: [],
   bootstrap: [AppComponent]

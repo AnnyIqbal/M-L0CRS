@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import {ActivatedRoute, Router} from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { AngularFire, FirebaseListObservable } from 'angularfire2';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -7,13 +9,19 @@ import {ActivatedRoute, Router} from '@angular/router';
 })
 export class AppComponent {
   title = 'app works!';
-  MenuIcons: string[] = ['MENU', 'HOME', 'DASHBOARD', 'BOOK', 'ISSUE A BOOK', 'RATE A BOOK', 'BOOK SHELF', 'LIBRARY', 'NOTICE BOARD'];
-  icons: string[] = [
-    'home', 'dashboard', 'book', 'add_shopping_cart', 'favorite', 'shopping_cart', 'account_balance', 'notifications'
-  ]; //<i class="material-icons">card_travel</i> co.
+  username = 'Abc';
+  MenuIcons: string[] = ['MENU', 'HOME', 'DASHBOARD', 'COMPANY', 'STUDENT', 'ADMIN', 'NOTICE BOARD'];
+  icons: string[] = ['home', 'dashboard', 'card_travel', 'perm_identity', 'person', 'notifications'];
 
-  constructor(private r: Router, private ar: ActivatedRoute){}
+  constructor(private r: Router, private ar: ActivatedRoute, private af: AngularFire ){}
   routeTo(x) {
     this.r.navigate([x]);
+  }
+  SignOut() {
+    // 'signout' action dispatched from redux
+    // this.a.signOut();
+    this.af.auth.logout();
+    this.r.navigate(['home']); // navigate back to home page
+    alert('Please Sign In to continue...');
   }
 }

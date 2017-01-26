@@ -8,6 +8,8 @@ import { Component, Input } from '@angular/core';
 export class ViewListComponent {
 
   @Input() isAdmin: boolean;
+  @Input() isStd: boolean;
+  @Input() isCompany: boolean;
 
   students: [
     {
@@ -44,6 +46,5 @@ export class ViewListComponent {
   ];
 constructor() {
   console.log(this.isAdmin);
-  
 }
 }

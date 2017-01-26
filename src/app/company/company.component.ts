@@ -7,6 +7,9 @@ import { Component, Output, EventEmitter} from '@angular/core';
 })
 export class CompanyComponent {
   click: string = 'viewList';
+  isAdmin: boolean = false;
+  isStd: boolean = false;
+  isCompany: boolean = true;
   @Output() changeTab = new EventEmitter<any>();
 
   out(event: any) {

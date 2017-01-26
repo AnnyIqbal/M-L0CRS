@@ -19,7 +19,7 @@
     font-family: serif;
     margin-left: -25px;
     margin-top: 13px;
-    width: 120px;
+    width: 135px;
 }
 .flex {
     display: inline-flex;
@@ -50,6 +50,11 @@
     margin-left: 2em;
 }
 .main {
-    height: 100vh;
-    width: 100vw;
+    height: 96vh;
+    width: 96vw;
+}
+.action {
+    width: 50px;
+    margin: -17px 45px 0 auto;
+    text-align: center;
 }
