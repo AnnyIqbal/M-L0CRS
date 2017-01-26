@@ -30,7 +30,7 @@ export class ViewListComponent {
     location: string,
     numberOfVacancies: number
   }];
-a: string = 'id1';
+a: string = '1';
 constructor(private af: AngularFire) {
   this.item = af.database.list('/students');
 this.item.update(this.a, {index: this.students});
