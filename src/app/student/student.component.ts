@@ -12,10 +12,4 @@ export class StudentComponent {
   isStd: boolean = true;
   isCompany: boolean = false;
 
-  // @Output() changeTab = new EventEmitter<any>();
-
-  // out(event: any) {
-  //   this.changeTab.emit(event);
-  // }
-
 }

@@ -1,15 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-post-job',
   templateUrl: './post-job.component.html',
   styleUrls: ['./post-job.component.css']
 })
-export class PostJobComponent implements OnInit {
+export class PostJobComponent {
 
-  constructor() { }
+  @Output() changeTab = new EventEmitter<any>();
 
-  ngOnInit() {
+  PostJob(formValue, event) {
+    alert('Job Successfully Posted');
+    this.changeTab.emit(event);
   }
-
 }

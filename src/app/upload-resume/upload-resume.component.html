@@ -42,19 +42,19 @@
                 placeholder="Contact Number" 
                 align="start" 
                 name="phone"
-                type="password" 
+                type="number" 
                 #phone="ngModel"
-                [(ngModel)]="passwordUp"
-                minlength="11">
+                [(ngModel)]="passwordUp">
+                <!--minlength="11"-->
             </md-input>
-            <small [hidden]="phone.valid || (phone.pristine && !ResumeForm._submitted)" class="alert alert-danger">
+            <!--<small [hidden]="phone.valid || (phone.pristine && !ResumeForm._submitted)" class="alert alert-danger">
                 Contact Number must be 11 characters long!
-            </small>
+            </small>-->
             <small [hidden]="!phone.errors?.required || (phone.pristine && !ResumeForm._submitted)" class="alert alert-danger">
-                Password is required!
+                Contact Number is required!
             </small>
                 <br><br>
-            <button md-raised-button color="primary" type="submit" [disabled]="!emlid.valid || !phone.valid"> 
+            <button md-raised-button color="primary" type="submit" [disabled]="!uname.valid || !emlid.valid">
                 Submit Resume
             </button>
             <br>

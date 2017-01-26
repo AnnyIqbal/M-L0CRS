@@ -1,3 +1,61 @@
-<p>
-  post-job works!
-</p>
+<md-card>
+    <md-card-title> 
+      <h2>Post Job</h2>
+    </md-card-title>
+    <md-card-content>
+      <form #vacancyForm (ngSubmit)="PostJob(vacancyForm.value)">
+        <md-input required
+            dividerColor='primary' 
+            placeholder='Job Title'
+            name="jobTitle"
+            type="text"
+            #jobTitle="ngModel"
+            [(ngModel)]="title">
+        </md-input>
+        <small [hidden]="!jobTitle.errors?.required || (jobTitle.pristine && !vacancyForm._submitted)" class="alert alert-danger">
+            Job Title is required!
+        </small>
+        <br>
+        <md-input required
+            dividerColor='primary' 
+            placeholder='Company Name'
+            name="cname"
+            type="text"
+            #cname="ngModel"
+            [(ngModel)]="companyname">
+        </md-input>
+        <small [hidden]="!cname.errors?.required || (cname.pristine && !vacancyForm._submitted)" class="alert alert-danger">
+            Company Name is required!
+        </small>
+        <br>
+        <md-input
+            dividerColor='primary' 
+            placeholder='Job Location'
+            name="location"
+            type="text"
+            #location="ngModel"
+            [(ngModel)]="joblocation">
+        </md-input>
+        <br>
+        <md-input 
+            dividerColor='primary' 
+            placeholder='No. of Vacancies'
+            name="vacanycount"
+            type="number"
+            #vacanycount="ngModel"
+            [(ngModel)]="vacancies">
+        </md-input>
+        <br>
+        <textarea 
+            class='textarea' 
+            placeholder='Job Description' 
+            rows="7" 
+            cols="35">
+        </textarea>
+        <br>
+        <button type='submit' md-mini-fab color='primary'>
+          <i class="material-icons">send</i>
+        </button>
+      </form>
+    </md-card-content>
+  </md-card>

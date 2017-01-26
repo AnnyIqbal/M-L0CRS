@@ -45,9 +45,8 @@
     <thead>
       <tr>
         <th> S.No. </th>
+        <th> Job Title </th>
         <th> Company Name </th>
-        <th> Business Domain </th>
-        <th> Architecture </th>
         <th> Location </th>
         <th> Number of Vacancies </th>
         <th></th>
@@ -57,9 +56,8 @@
     <tbody>
       <tr *ngFor="let co of companies; let i = index">
         <td> {{i}} </td>
+        <td> {{co.jobTitle}} </td>
         <td> {{co.name}} </td>
-        <td> {{co.domain}} </td>
-        <td> {{co.architecture}} </td>
         <td> {{co.location}} </td>
         <td> {{co.numberOfVacancies}} </td>
         <td> 

@@ -11,8 +11,6 @@ export class ViewListComponent {
   @Input() isStd: boolean;
   @Input() isCompany: boolean;
 
-  // students: [string] = ['Anny', 'Sadaf'] ;
-  // companies: [string] = ['Panacloud', 'Pasha'] ;
   students: [
     {
     name: string,
@@ -21,31 +19,15 @@ export class ViewListComponent {
     cgpa: number,
     yearOfPassing: number
   }];
-  //   {
-  //     name: 'Anny',
-  //     gender: 'Female',
-  //     degreeTitle: 'MBA',
-  //     cgpa: 3.56,
-  //     yearOfPassing: 2014
-  //   }
-  // ];
 
   companies: [
   {
+    jobtitle: string,
     name: string,
-    domain: string,
-    architecture: string,
     location: string,
     numberOfVacancies: number
   }];
-  //   {
-  //     name: 'ABC Pvt. Ltd.',
-  //     domain: 'event planners',
-  //     architecture: 'company',
-  //     location: 'DHA',
-  //     numberOfVacancies: 5
-  //   }
-  // ];
+
 constructor() {
   console.log(this.isAdmin);
 }
@@ -59,6 +41,6 @@ constructor() {
   }
 
   viewDetails(i) {
-    
+    //todo
   }
 }

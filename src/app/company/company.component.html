@@ -12,5 +12,5 @@
   <app-view-list [isAdmin]="isAdmin" [isStd]="isStd" [isCompany]="isCompany"></app-view-list>
 </div>
 <div *ngIf="click === 'postJob'">
-  <app-company-details></app-company-details>
+  <app-post-job (changeTab)="click = 'viewList'"></app-post-job>
 </div>
