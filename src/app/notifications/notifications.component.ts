@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-notifications',
@@ -9,6 +9,7 @@ export class NotificationsComponent {
 
   notifications: string[] = ['first notification on notice board'];
   list: boolean = true;
+  @Input() isAdmin: boolean;
 
   AddNotice(newNotice) {
     this.notifications.push(newNotice);

@@ -9,11 +9,11 @@
     </md-card>
   </li>
 </ul>
-<button md-mini-fab color='warn' (click)="list = !list">
+<button md-mini-fab color='warn' (click)="list = !list" [disabled]="!isAdmin">
   <i class="material-icons">add</i>
 </button>
 </div>
-<div *ngIf="!list">
+<div *ngIf="!list && isAdmin">
   <md-card>
     <md-card-title> 
       Add New Notice Here

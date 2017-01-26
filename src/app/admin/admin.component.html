@@ -17,5 +17,5 @@
   <app-add-company (changeTab) = "out($event)"></app-add-company>
 </div>
 <div *ngIf="click === 'notifications'">
-  <app-notifications></app-notifications>
+  <app-notifications [isAdmin] = "isAdmin"></app-notifications>
 </div>

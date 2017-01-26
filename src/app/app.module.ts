@@ -23,6 +23,8 @@ import { SigninComponent } from './signin/signin.component';
 import { ViewListComponent } from './view-list/view-list.component';
 import { AddCompanyComponent } from './add-company/add-company.component';
 import { NotificationsComponent } from './notifications/notifications.component';
+import { CompanyDetailsComponent } from './company-details/company-details.component';
+import { UploadResumeComponent } from './upload-resume/upload-resume.component';
 
 const myFirebaseConfig = {
     apiKey: 'AIzaSyCHEIyUXYy0ZpJdG5N8bH2mAZd52xZZRZA',
@@ -61,7 +63,9 @@ const routes: Routes =[
     StudentComponent,
     ViewListComponent,
     AddCompanyComponent,
-    NotificationsComponent
+    NotificationsComponent,
+    CompanyDetailsComponent,
+    UploadResumeComponent
   ],
   imports: [
     BrowserModule,
