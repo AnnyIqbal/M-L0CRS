@@ -23,8 +23,7 @@ user$: Observable<any>; // gets User State of the app
       private a: MyActions
     ) {}
 
-  onSignIn(value, userType) {
-    console.log('sign in');
+  onSignIn(value) {
     // 'signin' action dispatched from redux
     this.a.signIn(value.eml);
 
@@ -38,12 +37,6 @@ user$: Observable<any>; // gets User State of the app
         }, (err) => {
             alert(err);
         });
-    if (userType === 'Company') {
-      this.index = 1;
-    }
-    else if (userType === 'Student') {
-      this.index = 2;
-    }
   }
 
 }

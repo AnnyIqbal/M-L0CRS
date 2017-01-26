@@ -6,9 +6,9 @@ export class MyActions{
 
     // actions
 
-    static ADD_TASK = 'ADD_TASK';
-    static DLT_TASK = 'DLT_TASK';
-    static EDIT_TASK = 'EDIT_TASK';
+    // static ADD_TASK = 'ADD_TASK';
+    // static DLT_TASK = 'DLT_TASK';
+    // static EDIT_TASK = 'EDIT_TASK';
     static SIGN_IN = 'SIGN_IN';
     static SIGN_UP = 'SIGN_UP';
     static SIGN_OUT = 'SIGN_OUT';
@@ -16,7 +16,7 @@ export class MyActions{
     constructor(private ngRedux: NgRedux<{}>) { }
 
     // action controllers
-
+/*
     addTask(task) {
         this.ngRedux.dispatch({ type: MyActions.ADD_TASK, payload: task });
     }
@@ -28,9 +28,9 @@ export class MyActions{
     editTask(task) {
         this.ngRedux.dispatch({ type: MyActions.EDIT_TASK, payload: task });
     }
-
-    signIn() {
-        this.ngRedux.dispatch({ type: MyActions.SIGN_IN, payload: 'loggedIn' });
+*/
+    signIn(status) {
+        this.ngRedux.dispatch({ type: MyActions.SIGN_IN, payload: status });
     }
 
     signUp(status) {
@@ -38,6 +38,6 @@ export class MyActions{
     }
 
     signOut() {
-        this.ngRedux.dispatch({ type: MyActions.SIGN_OUT, payload: 'loggedout' });
+        this.ngRedux.dispatch({ type: MyActions.SIGN_OUT, payload: 'signedout'  });
     }
 }

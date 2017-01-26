@@ -33,15 +33,15 @@
 .header {
     display: inline-flex;
     width: 95vw;
-    height: 5vh;
+    height: 12vh;
     background-color: springgreen;
 }
 .heading, .logo, .user {
     flex-wrap: nowrap;
 }
 .logo {
-    height: 100px;
-    width: 100px;
+    height: 80px;
+    width: 80px;
 }
 .user {
     margin-left: 55em;

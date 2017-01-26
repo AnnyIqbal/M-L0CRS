@@ -1,3 +1,4 @@
+/*
 export const initialTaskState = {
     Tasks: {
         index: 0,
@@ -38,7 +39,7 @@ export const initialTaskState = {
             return state;
      }
  };
-
+*/
 export const initialUserState = {
     User: {
         name: '',

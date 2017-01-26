@@ -25,7 +25,7 @@ user$: Observable<any>;
 
   SignUp(user) {
     // 'signup' action dispatched from redux
-    this.a.signUp(user);
+    this.a.signUp(user.name);
 
     this.af.auth.createUser(
       {email: user.emlid, password: user.pcode}

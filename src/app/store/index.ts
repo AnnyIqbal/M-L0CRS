@@ -7,14 +7,13 @@ import { MyActions } from './actions';
 export { MyActions } from './actions';
 
 // Reducer
-import { TaskReducer, initialTaskState, UserReducer, initialUserState } from './reducers';
+import { UserReducer, initialUserState } from './reducers';
 
 export interface IAppState {
     TaskReducer: Object;
     UserReducer: Object;
 }
 export const AppReducer = combineReducers<IAppState>({
-    TaskReducer,
     UserReducer
 });
 

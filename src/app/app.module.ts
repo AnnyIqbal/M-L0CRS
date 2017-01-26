@@ -5,16 +5,16 @@ import { HttpModule } from '@angular/http';
 import { MaterialModule } from '@angular/material';
 import { RouterModule, Routes } from '@angular/router';
 import { AngularFireModule, AuthProviders, AuthMethods } from 'angularfire2';
+import { NgReduxModule } from 'ng2-redux';
 import 'hammerjs';
+
+// StoreModule
+import { StoreModule } from './store';
+
+// Components
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { UserComponent } from './user/user.component';
-import { BookComponent } from './book/book.component';
-import { AddToCartComponent } from './add-to-cart/add-to-cart.component';
-import { FavoriteComponent } from './favorite/favorite.component';
-import { BookShelfComponent } from './book-shelf/book-shelf.component';
-import { LibraryComponent } from './library/library.component';
-import { LocatorComponent } from './locator/locator.component';
 import { StudentComponent } from './student/student.component';
 import { AdminComponent } from './admin/admin.component';
 import { CompanyComponent } from './company/company.component';
@@ -44,7 +44,9 @@ const routes: Routes =[
   { path: 'card_travel', component: CompanyComponent },
   { path: 'perm_identity', component: StudentComponent },
   { path: 'person', component: AdminComponent },
-  { path: 'notifications', component: NotificationsComponent }
+  { path: 'notifications', component: NotificationsComponent },
+  { path: '**', redirectTo: 'home'}
+
 ];
 
 @NgModule({
@@ -52,17 +54,11 @@ const routes: Routes =[
     AppComponent,
     HomeComponent,
     UserComponent,
-    BookComponent,
-    AddToCartComponent,
-    FavoriteComponent,
-    BookShelfComponent,
-    StudentComponent,
-    LibraryComponent,
-    LocatorComponent,
     AdminComponent,
     CompanyComponent,
     SignupComponent,
     SigninComponent,
+    StudentComponent,
     ViewListComponent,
     AddCompanyComponent,
     NotificationsComponent
@@ -71,6 +67,8 @@ const routes: Routes =[
     BrowserModule,
     FormsModule,
     HttpModule,
+    StoreModule,
+    NgReduxModule,
     MaterialModule.forRoot(),
     RouterModule.forRoot(routes),
     AngularFireModule.initializeApp(myFirebaseConfig, myFirebaseAuthConfig)
