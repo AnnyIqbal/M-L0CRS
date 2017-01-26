@@ -1,10 +1,9 @@
 import { Observable } from 'rxjs';
-// import { select } from 'ng2-redux';
-// import { MyActions } from './../store/actions';
+import { select } from 'ng2-redux';
+import { MyActions } from './../store/actions';
 import { Component, OnInit } from '@angular/core';
 import { AngularFire } from 'angularfire2';
 import { AngularFireModule, AuthProviders, AuthMethods, FirebaseAuthState } from 'angularfire2';
-// import { FirebaseAuth } from 'angularfire2/auth';
 import { Router } from '@angular/router';
 
 @Component({
@@ -14,28 +13,28 @@ import { Router } from '@angular/router';
 })
 export class SigninComponent {
 
-// @select(['User', 'status'])
-// user$: Observable<any>; // gets User State of the app
+@select(['User', 'status'])
+user$: Observable<any>; // gets User State of the app
 
   index: number;
   constructor(
       private af: AngularFire,
       private route: Router,
-      // private a: MyActions
+      private a: MyActions
     ) {}
 
   onSignIn(value, userType) {
     console.log('sign in');
     // 'signin' action dispatched from redux
-    // this.a.signIn(value.eml);
+    this.a.signIn(value.eml);
 
         // this.af.auth.login(); // Google login
         this.af.auth.login(
-          {email: value.eml , password: value.pass}, // xyz@todo.com, xyzxyz
+          {email: value.eml , password: value.pass},
           {provider: AuthProviders.Password, method: AuthMethods.Password}
         ).then((res) => {
             alert('Sign In Successful!');
-            this.route.navigate(['dashboard']); // navigate to dashboard
+            this.route.navigate(['dashboard']);
         }, (err) => {
             alert(err);
         });

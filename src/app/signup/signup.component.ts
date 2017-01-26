@@ -1,10 +1,9 @@
-// import { MyActions } from './../store/actions';
+import { MyActions } from './../store/actions';
 import { Observable } from 'rxjs';
-// import { select } from 'ng2-redux';
+import { select } from 'ng2-redux';
 import { Component } from '@angular/core';
 import { AngularFire } from 'angularfire2';
 import { Router, ActivatedRoute } from '@angular/router';
-// import { FirebaseAuth } from 'angularfire2/auth';
 
 @Component({
   selector: 'app-signup',
@@ -13,28 +12,27 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class SignupComponent {
 
-// @select(['User', 'status'])
-// user$: Observable<any>;
+@select(['User', 'status'])
+user$: Observable<any>;
 
   index: number;
   constructor(
     private af: AngularFire,
     private route: Router,
     private ar: ActivatedRoute,
-    // private a: MyActions
+    private a: MyActions
   ) {}
 
-  SignUp(user, userType) {
+  SignUp(user) {
     // 'signup' action dispatched from redux
-    // this.a.signUp(user);
+    this.a.signUp(user);
 
-    // this.createNewUser(user);
-    alert(` Hi ${user.uname}, Welcome to CRS! `);
     this.af.auth.createUser(
-      { email: user.emlid, password: user.pcode }
+      {email: user.emlid, password: user.pcode}
     );
-    console.log('signup copmonent', userType);
-    this.routeTo('dashboard');
+    alert(` Hi ${user.uname}, Welcome to CRS! `);
+
+    this.routeTo('perm_identity');
     this.index = 2;
   }
 

@@ -3,7 +3,7 @@
         <h2>Student Sign Up</h2>
     </md-card-title>
     <md-card-content>
-        <form novalidate #SignUpForm="ngForm" (ngSubmit)='SignUp(SignUpForm.value, userType.value)'>
+        <form novalidate #SignUpForm="ngForm" (ngSubmit)='SignUp(SignUpForm.value)'>
             <md-input required
                 [dividerColor]=" (!uname.valid || uname.pristine) ? 'warn':'primary' " 
                 placeholder="Name" 

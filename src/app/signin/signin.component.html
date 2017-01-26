@@ -37,7 +37,7 @@
             <small [hidden]="!pass.errors?.required || (pass.pristine && !SignInForm._submitted)" class="alert alert-danger">
                 Password is required!
             </small>
-            <br><br><br>
+            <br><br>
             <md-radio-group #userType required> Account Type: 
                 <md-radio-button value="Company"> Company </md-radio-button>
                 <md-radio-button value="Student"> Student </md-radio-button>
@@ -49,9 +49,4 @@
             <br><br>
         </form>
     </md-card-content>
-    <!--<md-card-actions>
-        <button id="forgot" md-raised-button color="warn" type="submit">
-            Forgot Password
-        </button> 
-    </md-card-actions>-->
   </md-card>
