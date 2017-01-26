@@ -11,6 +11,8 @@ export class ViewListComponent {
   @Input() isStd: boolean;
   @Input() isCompany: boolean;
 
+  // students: [string] = ['Anny', 'Sadaf'] ;
+  // companies: [string] = ['Panacloud', 'Pasha'] ;
   students: [
     {
     name: string,
@@ -18,15 +20,15 @@ export class ViewListComponent {
     degreeTitle: string,
     cgpa: number,
     yearOfPassing: number
-  }] = [
-    {
-      name: 'Anny',
-      gender: 'Female',
-      degreeTitle: 'MBA',
-      cgpa: 3.56,
-      yearOfPassing: 2014
-    }
-  ];
+  }];
+  //   {
+  //     name: 'Anny',
+  //     gender: 'Female',
+  //     degreeTitle: 'MBA',
+  //     cgpa: 3.56,
+  //     yearOfPassing: 2014
+  //   }
+  // ];
 
   companies: [
   {
@@ -35,16 +37,28 @@ export class ViewListComponent {
     architecture: string,
     location: string,
     numberOfVacancies: number
-  }] = [
-    {
-      name: 'ABC Pvt. Ltd.',
-      domain: 'event planners',
-      architecture: 'company',
-      location: 'DHA',
-      numberOfVacancies: 5
-    }
-  ];
+  }];
+  //   {
+  //     name: 'ABC Pvt. Ltd.',
+  //     domain: 'event planners',
+  //     architecture: 'company',
+  //     location: 'DHA',
+  //     numberOfVacancies: 5
+  //   }
+  // ];
 constructor() {
   console.log(this.isAdmin);
 }
+
+  removeCompany(i) {
+    this.companies.splice(i, 1);
+  }
+
+  removeStudent(i) {
+    this.companies.splice(i, 1);
+  }
+
+  viewDetails(i) {
+    
+  }
 }

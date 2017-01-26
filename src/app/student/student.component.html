@@ -8,3 +8,9 @@
     </span>
   </md-toolbar>
 </div>
+<div *ngIf="click === 'viewList'">
+  <app-view-list [isAdmin]="isAdmin" [isStd]="isStd" [isCompany]="isCompany"></app-view-list>
+</div>
+<div *ngIf="click === 'uploadCV'">
+  abc
+</div>

@@ -7,12 +7,12 @@
     </div>
     <md-card-actions class="action"> 
       {{username}} <br>
-      <button md-raised-button color="warn" (click)="SignOut()" [disabled]="(user$ | async) === 'signedout'">
+      <button md-raised-button color="warn" (click)="SignOut()" [disabled]="(user$ | async) !== 'signedout'">
+        <!-- TODO: update user.status instead of adding new key each time-->
         SignOut
       </button>
     </md-card-actions>
   </md-card>
-{{user$ | async}}
   <div class="flex">
     <div class="menuIcons">
         <i class="material-icons" (click)="menu.toggle()">menu</i>

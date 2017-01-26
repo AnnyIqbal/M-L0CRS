@@ -1,7 +1,8 @@
-<md-slide-toggle color="primary" [checked]="isChecked" (change)="isChecked=!isChecked" ngClass="{show: isAdmin, hide: !isAdmin}">
+<md-slide-toggle color="primary" [checked]="isChecked" (change)="isChecked=!isChecked" *ngIf="isAdmin">
     {{ isChecked ? 'Students\' List' : 'Company\'s List' }}
 </md-slide-toggle>
-<div *ngIf="isChecked && (isCompany || isAdmin)">
+
+<div *ngIf="isCompany || (isAdmin && isChecked)">
   <h3> Students' List </h3>
   <table>
     <thead>
@@ -30,7 +31,7 @@
           </button>
         </td>
         <td> 
-          <button md-mini-fab color="warn" [ngClass]="{show: isAdmin, hide: !isAdmin}">
+          <button md-mini-fab color="warn" [ngClass]="{show: isAdmin, hide: !isAdmin}" (click)="removeStudent(this)" >
             <i class="material-icons"> delete </i>
           </button>
         </td>
@@ -38,7 +39,7 @@
     </tbody>
   </table>
 </div>
-<div *ngIf="!isChecked && (isStd || isAdmin)">
+<div *ngIf="isStd || (isAdmin && !isChecked)">
   <h3> Company's List </h3>
   <table>
     <thead>
@@ -67,7 +68,7 @@
           </button>
         </td>
         <td> 
-          <button md-mini-fab color="warn" [ngClass]="{show: isAdmin, hide: !isAdmin}">
+          <button md-mini-fab color="warn" [ngClass]="{show: isAdmin, hide: !isAdmin}" (click)="removeCompany(this)" >
             <i class="material-icons"> delete </i>
           </button>
         </td>

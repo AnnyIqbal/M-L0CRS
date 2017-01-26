@@ -1,15 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-student',
   templateUrl: './student.component.html',
   styleUrls: ['./student.component.css']
 })
-export class StudentComponent implements OnInit {
+export class StudentComponent {
 
-  constructor() { }
+  click: string = 'viewList';
+  isAdmin: boolean = false;
+  isStd: boolean = true;
+  isCompany: boolean = false;
 
-  ngOnInit() {
-  }
+  // @Output() changeTab = new EventEmitter<any>();
+
+  // out(event: any) {
+  //   this.changeTab.emit(event);
+  // }
 
 }

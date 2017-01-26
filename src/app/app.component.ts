@@ -14,7 +14,7 @@ export class AppComponent {
   title = 'app works!';
   username = 'Abc';
   MenuIcons: string[] = ['MENU', 'HOME', 'DASHBOARD', 'COMPANY', 'STUDENT', 'ADMIN', 'NOTICE BOARD'];
-  icons: string[] = ['home', 'dashboard', 'card_travel', 'perm_identity', 'person', 'notifications'];
+  icons: string[] = ['home', 'dashboard', 'card_travel', 'perm_identity', 'account_circle', 'notifications'];
 
   @select(['UserReducer', 'status'])
   user$: Observable<any>; // gets User State of the app

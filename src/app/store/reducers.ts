@@ -44,8 +44,7 @@ export const initialUserState = {
     User: {
         name: 'null',
         status: 'signedout'
-    },
-    abc: 'abc'
+    }
 };
 
 export const UserReducer = function(state = initialUserState, action: { type: string, payload?: any}) {

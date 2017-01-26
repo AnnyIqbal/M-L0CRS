@@ -43,7 +43,7 @@ const routes: Routes =[
   { path: 'dashboard', component: UserComponent },
   { path: 'card_travel', component: CompanyComponent },
   { path: 'perm_identity', component: StudentComponent },
-  { path: 'person', component: AdminComponent },
+  { path: 'account_circle', component: AdminComponent },
   { path: 'notifications', component: NotificationsComponent },
   { path: '**', redirectTo: 'home'}
 
