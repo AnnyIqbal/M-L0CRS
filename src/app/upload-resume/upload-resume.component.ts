@@ -12,4 +12,8 @@ export class UploadResumeComponent implements OnInit {
   ngOnInit() {
   }
 
+UploadResume(formValue) {
+  alert('Congrats! Profile Created & Resume Uploaded');
+}
+
 }

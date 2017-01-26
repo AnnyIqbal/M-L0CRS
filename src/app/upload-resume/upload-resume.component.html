@@ -1,3 +1,63 @@
-<p>
-  upload-resume works!
-</p>
+  <md-card>
+    <md-card-title>
+        <h2>Create Resume</h2>
+    </md-card-title>
+    <md-card-content>
+        <form novalidate #ResumeForm="ngForm" (ngSubmit)='UploadResume(ResumeForm.value)'>
+            <md-input required
+                [dividerColor]=" (!uname.valid || uname.pristine) ? 'warn':'primary' " 
+                placeholder="Name" 
+                align="start" 
+                name="uname"
+                type="text"
+                #uname="ngModel"
+                [(ngModel)]="username">
+            </md-input>
+            <small [hidden]="uname.valid || (uname.pristine && !ResumeForm._submitted)" class="alert alert-danger">
+                Invalid Name! 
+            </small>
+			<small [hidden]="!uname.errors?.required || (uname.pristine && !ResumeForm._submitted)" class="alert alert-danger">
+                Name is required!
+            </small>
+                <br>
+            <md-input required
+                [dividerColor]=" (!emlid.valid || emlid.pristine) ? 'warn':'primary' " 
+                placeholder="Email" 
+                align="start" 
+                name="emlid"
+                type="email"
+                #emlid="ngModel"
+                [(ngModel)]="emailUp"
+                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+            </md-input>
+            <small [hidden]="emlid.valid || (emlid.pristine && !ResumeForm._submitted)" class="alert alert-danger">
+                Invalid Email! 
+            </small>
+			<small [hidden]="!emlid.errors?.required || (emlid.pristine && !ResumeForm._submitted)" class="alert alert-danger">
+                Email is required!
+            </small>
+                <br>
+            <md-input required
+                [dividerColor]="(!phone.valid || phone.pristine) ? 'warn':'primary'" 
+                placeholder="Contact Number" 
+                align="start" 
+                name="phone"
+                type="password" 
+                #phone="ngModel"
+                [(ngModel)]="passwordUp"
+                minlength="11">
+            </md-input>
+            <small [hidden]="phone.valid || (phone.pristine && !ResumeForm._submitted)" class="alert alert-danger">
+                Contact Number must be 11 characters long!
+            </small>
+            <small [hidden]="!phone.errors?.required || (phone.pristine && !ResumeForm._submitted)" class="alert alert-danger">
+                Password is required!
+            </small>
+                <br><br>
+            <button md-raised-button color="primary" type="submit" [disabled]="!emlid.valid || !phone.valid"> 
+                Submit Resume
+            </button>
+            <br>
+        </form>
+    </md-card-content>
+  </md-card>
