@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { AngularFire, FirebaseListObservable } from 'angularfire2';
 
 @Component({
   selector: 'app-view-list',
@@ -10,6 +11,8 @@ export class ViewListComponent {
   @Input() isAdmin: boolean;
   @Input() isStd: boolean;
   @Input() isCompany: boolean;
+
+  item: FirebaseListObservable<any> ;
 
   students: [
     {
@@ -27,9 +30,10 @@ export class ViewListComponent {
     location: string,
     numberOfVacancies: number
   }];
-
-constructor() {
-  console.log(this.isAdmin);
+a: string = 'id1';
+constructor(private af: AngularFire) {
+  this.item = af.database.list('/students');
+this.item.update(this.a, {index: this.students});
 }
 
   removeCompany(i) {
@@ -41,6 +45,6 @@ constructor() {
   }
 
   viewDetails(i) {
-    //todo
+    
   }
 }
