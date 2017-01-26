@@ -26,13 +26,13 @@ import { NotificationsComponent } from './notifications/notifications.component'
 const routes: Routes =[
   { path: '', pathMatch: 'full', redirectTo: 'home' },
   { path: 'home', component: HomeComponent },
-  { path: 'person', component: UserComponent },
+  { path: 'dashboard', component: UserComponent },
   { path: 'book', component: BookComponent },
   { path: 'add_shopping_cart', component: AddToCartComponent },
   { path: 'favorite', component: FavoriteComponent },
   { path: 'shopping_cart', component: BookShelfComponent },
   { path: 'account_balance', component: LibraryComponent },
-  { path: 'location_on', component: LocatorComponent }
+  { path: 'notifications', component: NotificationsComponent }
 ];
 
 @NgModule({

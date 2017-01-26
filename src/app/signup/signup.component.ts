@@ -26,17 +26,12 @@ export class SignupComponent {
 
   SignUp(user, userType) {
     console.log('signup copmonent', userType);
-    this.routeTo('person');
-    if (userType === 'Company') {
-      this.index = 1;
-    }
-    else if (userType === 'Student') {
-      this.index = 2;
-    }
+    this.routeTo('dashboard');
+    this.index = 2;
   }
 
   routeTo(x) {
-    this.route.navigate([x], { queryParams: {index: this.index} } );
+    this.route.navigate([x]); // , { queryParams: {index: this.index} } );
   }
 
 /*

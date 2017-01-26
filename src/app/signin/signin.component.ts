@@ -17,14 +17,21 @@ export class SigninComponent {
 // @select(['User', 'status'])
 // user$: Observable<any>; // gets User State of the app
 
+  index: number;
   constructor(
       // private af: AngularFire,
       private route: Router,
       // private a: MyActions
     ) {}
 
-  onSignIn(value) {
-console.log('sign in')
+  onSignIn(value, userType) {
+    console.log('sign in');
+    if (userType === 'Company') {
+      this.index = 1;
+    }
+    else if (userType === 'Student') {
+      this.index = 2;
+    }
   }
     /*
     // 'signout' action dispatched from redux

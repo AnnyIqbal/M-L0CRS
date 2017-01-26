@@ -1,6 +1,6 @@
   <md-card>
     <md-card-title>
-        <h2>Sign Up</h2>
+        <h2>Student Sign Up</h2>
     </md-card-title>
     <md-card-content>
         <form novalidate #SignUpForm="ngForm" (ngSubmit)='SignUp(SignUpForm.value, userType.value)'>
@@ -20,12 +20,7 @@
 			<small [hidden]="!uname.errors?.required || (uname.pristine && !SignUpForm._submitted)" class="alert alert-danger">
                 Name is required!
             </small>
-                <br><br>
-            <md-radio-group #userType required> Account Type: 
-                <md-radio-button value="Company"> Company </md-radio-button>
-                <md-radio-button value="Student"> Student </md-radio-button>
-            </md-radio-group>
-                <br><br>
+                <br>
             <md-input required
                 [dividerColor]=" (!emlid.valid || emlid.pristine) ? 'warn':'primary' " 
                 placeholder="Email" 

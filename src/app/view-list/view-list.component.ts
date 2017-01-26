@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-view-list',
@@ -6,6 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./view-list.component.css']
 })
 export class ViewListComponent {
+
+  @Input() isAdmin: boolean;
 
   students: [
     {
@@ -40,4 +42,8 @@ export class ViewListComponent {
       numberOfVacancies: 5
     }
   ];
+constructor() {
+  console.log(this.isAdmin);
+  
+}
 }

@@ -12,6 +12,8 @@
         <th> Degree Title </th>
         <th> CGPA </th>
         <th> Year of Passing </th>
+        <th></th>
+        <th></th>
       </tr>
     </thead>
     <tbody>
@@ -22,6 +24,16 @@
         <td> {{std.degreeTitle}} </td>
         <td> {{std.cgpa}} </td>
         <td> {{std.yearOfPassing}} </td>
+        <td> 
+          <button md-mini-fab color="primary">
+            <i class="material-icons"> details </i>
+          </button>
+        </td>
+        <td> 
+          <button md-mini-fab color="warn"  [ngClass]="{show: isAdmin, hide: !isAdmin}">
+            <i class="material-icons"> delete </i>
+          </button>
+        </td>
       </tr>
     </tbody>
   </table>
@@ -37,6 +49,8 @@
         <th> Architecture </th>
         <th> Location </th>
         <th> Number of Vacancies </th>
+        <th></th>
+        <th></th>
       </tr>
     </thead>
     <tbody>
@@ -47,6 +61,16 @@
         <td> {{co.architecture}} </td>
         <td> {{co.location}} </td>
         <td> {{co.numberOfVacancies}} </td>
+        <td> 
+          <button md-mini-fab color="primary">
+            <i class="material-icons"> details </i>
+          </button>
+        </td>
+        <td> 
+          <button md-mini-fab color="warn" [ngClass]="{show: isAdmin, hide: !isAdmin}">
+            <i class="material-icons"> delete </i>
+          </button>
+        </td>
       </tr>
     </tbody>
   </table>

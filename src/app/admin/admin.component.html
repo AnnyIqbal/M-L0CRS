@@ -1,7 +1,7 @@
 <div class="toolbar">
   <md-toolbar color="accent">
     <span>Toolbar</span>
-    <span class="example-fill-remaining-space"></span>
+    <span class="fill-remaining-space"></span>
     <span>
       <i class="material-icons" (click)="click = 'viewList'">view_list</i>
       <i class="material-icons" (click)="click = 'addCompany'">add</i>
@@ -10,7 +10,7 @@
   </md-toolbar>
 </div>
 <div *ngIf="click === 'viewList'">
-  <app-view-list></app-view-list>
+  <app-view-list [isAdmin] = "true"></app-view-list>
 </div>
 <div *ngIf="click === 'addCompany'">
   <app-add-company (changeTab) = "out($event)"></app-add-company>

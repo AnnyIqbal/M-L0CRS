@@ -1,3 +1,16 @@
-<p>
-  company works!
-</p>
+<div class="toolbar">
+  <md-toolbar color="accent">
+    <span>Toolbar</span>
+    <span class="fill-remaining-space"></span>
+    <span>
+      <i class="material-icons" (click)="click = 'viewList'">view_list</i>
+      <i class="material-icons" (click)="click = 'postJob'">add</i>
+    </span>
+  </md-toolbar>
+</div>
+<div *ngIf="click === 'viewList'">
+  <app-view-list isAdmin = "false"></app-view-list>
+</div>
+<div *ngIf="click === 'postJob'">
+  <app-add-company (changeTab) = "out($event)"></app-add-company>
+</div>
