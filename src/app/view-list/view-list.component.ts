@@ -14,14 +14,13 @@ export class ViewListComponent {
 
   item: FirebaseListObservable<any> ;
 
-  students: [
-    {
+  students: [{
     name: string,
     email: string,
-    contactNum: number
+    contactNum: number,
     degreeTitle: string,
     cgpa: number
-  }];
+  }] = [{name: 'abc', email: 'abc@email.com', contactNum: 123, degreeTitle: 'ABC', cgpa: 9}];
 
   companies: [
   {
@@ -33,9 +32,19 @@ export class ViewListComponent {
 
 constructor(private af: AngularFire) {
   this.item = this.af.database.list('/students');
-  console.log(this.item);
-  this.item.push({name: 'anny', email: 'anny@gmail.com', phone: 111, degTitle: 'MBA', cgpa: 3.56});
-  console.log(this.item)
+
+  this.item.subscribe(
+    (x) => {
+      for (let i = 0; i < x.length; i++) { // updates the entire students array each time
+        this.students[i] = {  // sync with firebase db
+          name: x[i].uname,
+          email: x[i].emlid,
+          contactNum: x[i].phone,
+          degreeTitle: x[i].degreeTitle,
+          cgpa: x[i].cgpa
+        };
+    }
+  });
 }
 
   removeCompany(i) {
@@ -46,7 +55,4 @@ constructor(private af: AngularFire) {
     this.companies.splice(i, 1);
   }
 
-  viewDetails(i) {
-    
-  }
 }

@@ -1,4 +1,5 @@
 import { Component, Output, EventEmitter } from '@angular/core';
+import { AngularFire, FirebaseListObservable } from 'angularfire2';
 
 @Component({
   selector: 'app-upload-resume',
@@ -8,11 +9,16 @@ import { Component, Output, EventEmitter } from '@angular/core';
 export class UploadResumeComponent  {
 
   @Output() changeTab = new EventEmitter<any>();
+  std: FirebaseListObservable<any> ;
+
+constructor(private af: AngularFire) {}
 
   UploadResume(formValue, event) {
-    console.log(formValue);
+    this.std = this.af.database.list('/students');
+    this.std.push(formValue); // formvalue is pushed into the db
+    // console.log(formValue);
     alert('Congrats! Profile Created & Resume Uploaded');
-    // this.changeTab.emit(event);
+    this.changeTab.emit(event);
   }
 
 }
