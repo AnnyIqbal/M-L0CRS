@@ -31,8 +31,11 @@
           </button>
         </td>
         <td> 
-          <button md-mini-fab color="warn" [ngClass]="{show: isAdmin, hide: !isAdmin}" (click)="removeStudent(this)" >
-            <i class="material-icons"> delete </i>
+          <button md-mini-fab 
+            color="warn" 
+            [ngClass]="{show: isAdmin, hide: !isAdmin}" 
+            (click)="removeStudent(this.std.key)">
+                <i class="material-icons"> delete </i>
           </button>
         </td>
       </tr>

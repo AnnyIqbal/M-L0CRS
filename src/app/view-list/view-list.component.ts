@@ -13,14 +13,15 @@ export class ViewListComponent {
   @Input() isCompany: boolean;
 
   item: FirebaseListObservable<any> ;
-
+  
   students: [{
     name: string,
     email: string,
     contactNum: number,
     degreeTitle: string,
-    cgpa: number
-  }] = [{name: 'abc', email: 'abc@email.com', contactNum: 123, degreeTitle: 'ABC', cgpa: 9}];
+    cgpa: number,
+    key: string
+  }] = [{name: 'abc', email: 'abc@email.com', contactNum: 123, degreeTitle: 'ABC', cgpa: 9, key: '0'}];
 
   companies: [
   {
@@ -32,27 +33,29 @@ export class ViewListComponent {
 
 constructor(private af: AngularFire) {
   this.item = this.af.database.list('/students');
-
   this.item.subscribe(
     (x) => {
-      for (let i = 0; i < x.length; i++) { // updates the entire students array each time
-        this.students[i] = {  // sync with firebase db
+      for (let i = 0; i < x.length; i++) {
+        this.students[i] = {
           name: x[i].uname,
           email: x[i].emlid,
           contactNum: x[i].phone,
           degreeTitle: x[i].degreeTitle,
-          cgpa: x[i].cgpa
+          cgpa: x[i].cgpa,
+          key: x[i].$key
         };
     }
   });
+
 }
 
   removeCompany(i) {
     this.companies.splice(i, 1);
   }
-
-  removeStudent(i) {
-    this.companies.splice(i, 1);
+// chk for subscription, 2 subscriptions independent hoti hn therefore remove wali is not sync with render wali :(
+  removeStudent(key) { // db key is received as 'key'
+    this.item.subscribe( x => this.item.remove(key) ); // node specified by the key is deleted from the db
+    alert('Success! Admin removed the student.');
   }
 
 }
