@@ -26,7 +26,7 @@ import { NotificationsComponent } from './notifications/notifications.component'
 import { UploadResumeComponent } from './upload-resume/upload-resume.component';
 import { PostJobComponent } from './post-job/post-job.component';
 
-const myFirebaseConfig = {
+export const myFirebaseConfig = {
     apiKey: 'AIzaSyCHEIyUXYy0ZpJdG5N8bH2mAZd52xZZRZA',
     authDomain: 'l0crs-7c288.firebaseapp.com',
     databaseURL: 'https://l0crs-7c288.firebaseio.com',
@@ -34,7 +34,7 @@ const myFirebaseConfig = {
     messagingSenderId: '85179573049'
 };
 
-const myFirebaseAuthConfig = {
+export const myFirebaseAuthConfig = {
   provider: AuthProviders.Google,
   method: AuthMethods.Redirect
 };

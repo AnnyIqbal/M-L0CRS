@@ -30,10 +30,12 @@ export class ViewListComponent {
     location: string,
     numberOfVacancies: number
   }];
-a: string = '1';
+
 constructor(private af: AngularFire) {
-  this.item = af.database.list('/students');
-this.item.update(this.a, {index: this.students});
+  this.item = this.af.database.list('/students');
+  console.log(this.item);
+  this.item.push({name: 'anny', email: 'anny@gmail.com', phone: 111, degTitle: 'MBA', cgpa: 3.56});
+  console.log(this.item)
 }
 
   removeCompany(i) {
