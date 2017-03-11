@@ -4,47 +4,51 @@
     </md-card-title>
     <md-card-content>
       <form #vacancyForm (ngSubmit)="PostJob(vacancyForm.value)">
-        <md-input required
+        <md-input-container required
             dividerColor='primary' 
-            placeholder='Job Title'
+            placeholder='Job Title'>
+            <input mdInput
             name="jobTitle"
             type="text"
             #jobTitle="ngModel"
             [(ngModel)]="title">
-        </md-input>
+        </md-input-container>
         <small [hidden]="!jobTitle.errors?.required || (jobTitle.pristine && !vacancyForm._submitted)" class="alert alert-danger">
             Job Title is required!
         </small>
         <br>
-        <md-input required
+        <md-input-container required
             dividerColor='primary' 
-            placeholder='Company Name'
+            placeholder='Company Name'>
+            <input mdInput
             name="cname"
             type="text"
             #cname="ngModel"
             [(ngModel)]="companyname">
-        </md-input>
+        </md-input-container>
         <small [hidden]="!cname.errors?.required || (cname.pristine && !vacancyForm._submitted)" class="alert alert-danger">
             Company Name is required!
         </small>
         <br>
-        <md-input
+        <md-input-container
             dividerColor='primary' 
-            placeholder='Job Location'
+            placeholder='Job Location'>
+            <input mdInput
             name="location"
             type="text"
             #location="ngModel"
             [(ngModel)]="joblocation">
-        </md-input>
+        </md-input-container>
         <br>
-        <md-input 
+        <md-input-container 
             dividerColor='primary' 
-            placeholder='No. of Vacancies'
+            placeholder='No. of Vacancies'>
+            <input mdInput
             name="vacanycount"
             type="number"
             #vacanycount="ngModel"
             [(ngModel)]="vacancies">
-        </md-input>
+        </md-input-container>
         <br>
         <textarea 
             class='textarea' 

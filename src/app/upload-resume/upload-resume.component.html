@@ -4,15 +4,15 @@
     </md-card-title>
     <md-card-content>
         <form novalidate #ResumeForm="ngForm" (ngSubmit)='UploadResume(ResumeForm.value)'>
-            <md-input required
+            <md-input-container required
                 [dividerColor]=" (!uname.valid || uname.pristine) ? 'warn':'primary' " 
-                placeholder="Name" 
-                align="start" 
+                placeholder="Name" >
+            <input mdInput
                 name="uname"
                 type="text"
                 #uname="ngModel"
                 [(ngModel)]="username">
-            </md-input>
+            </md-input-container>
             <small [hidden]="uname.valid || (uname.pristine && !ResumeForm._submitted)" class="alert alert-danger">
                 Invalid Name! 
             </small>
@@ -20,16 +20,16 @@
                 Name is required!
             </small>
                 <br>
-            <md-input required
+            <md-input-container required
                 [dividerColor]=" (!emlid.valid || emlid.pristine) ? 'warn':'primary' " 
-                placeholder="Email" 
-                align="start" 
+                placeholder="Email">
+            <input mdInput
                 name="emlid"
                 type="email"
                 #emlid="ngModel"
                 [(ngModel)]="emailUp"
                 pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
-            </md-input>
+            </md-input-container>
             <small [hidden]="emlid.valid || (emlid.pristine && !ResumeForm._submitted)" class="alert alert-danger">
                 Invalid Email! 
             </small>
@@ -37,28 +37,28 @@
                 Email is required!
             </small>
                 <br>
-            <md-input required
+            <md-input-container required
                 [dividerColor]="(!phone.valid || phone.pristine) ? 'warn':'primary'" 
-                placeholder="Contact Number" 
-                align="start" 
+                placeholder="Contact Number">
+            <input mdInput
                 name="phone"
                 type="number" 
                 #phone="ngModel"
                 [(ngModel)]="ContactNum">
-            </md-input>
+            </md-input-container>
             <small [hidden]="!phone.errors?.required || (phone.pristine && !ResumeForm._submitted)" class="alert alert-danger">
                 Contact Number is required!
             </small>
                 <br>
-            <md-input required
+            <md-input-container required
                 [dividerColor]=" (!degreeTitle.valid || degreeTitle.pristine) ? 'warn':'primary' " 
-                placeholder="Degree Title" 
-                align="start" 
+                placeholder="Degree Title" >
+            <input mdInput
                 name="degreeTitle"
                 type="text"
                 #degreeTitle="ngModel"
                 [(ngModel)]="degTitle">
-            </md-input>
+            </md-input-container>
             <small [hidden]="degreeTitle.valid || (degreeTitle.pristine && !ResumeForm._submitted)" class="alert alert-danger">
                 Invalid Degree Title! 
             </small>
@@ -66,15 +66,15 @@
                 Degree Title is required!
             </small>
                 <br>
-            <md-input required
+            <md-input-container required
                 [dividerColor]=" (!cgpa.valid || cgpa.pristine) ? 'warn':'primary' " 
-                placeholder="CGPA" 
-                align="start" 
+                placeholder="CGPA" >
+            <input mdInput
                 name="cgpa"
                 type="number"
                 #cgpa="ngModel"
                 [(ngModel)]="marksAsGP">
-            </md-input>
+            </md-input-container>
             <small [hidden]="cgpa.valid || (cgpa.pristine && !ResumeForm._submitted)" class="alert alert-danger">
                 Invalid CGPA! 
             </small>

@@ -13,7 +13,7 @@ export class ViewListComponent {
   @Input() isCompany: boolean;
 
   item: FirebaseListObservable<any> ;
-  
+
   students: [{
     name: string,
     email: string,
@@ -52,7 +52,8 @@ constructor(private af: AngularFire) {
   removeCompany(i) {
     this.companies.splice(i, 1);
   }
-// chk for subscription, 2 subscriptions independent hoti hn therefore remove wali is not sync with render wali :(
+// chk for subscription, 2 subscriptions independent hoti hn therefore remove wali is not sync with render wali :( ?
+  // todoapp se check how to dlt data ?
   removeStudent(key) { // db key is received as 'key'
     this.item.subscribe( x => this.item.remove(key) ); // node specified by the key is deleted from the db
     alert('Success! Admin removed the student.');

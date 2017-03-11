@@ -23,7 +23,6 @@ export class SigninComponent {
     // 'signin' action dispatched from redux
     this.a.signIn(value.eml);
 
-        // this.af.auth.login(); // Google login
         this.af.auth.login(
           {email: value.eml , password: value.pass},
           {provider: AuthProviders.Password, method: AuthMethods.Password}

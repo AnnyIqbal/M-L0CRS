@@ -32,7 +32,7 @@ export class AppComponent {
     this.a.signOut();
 
     this.af.auth.logout();
-    // this.r.navigate(['home']); // navigate back to home page
+    this.r.navigate(['home']); // navigate back to home page
     alert('Please Sign In to continue...');
   }
 }

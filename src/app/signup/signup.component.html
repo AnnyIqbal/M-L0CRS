@@ -4,16 +4,16 @@
     </md-card-title>
     <md-card-content>
         <form novalidate #SignUpForm="ngForm" (ngSubmit)='SignUp(SignUpForm.value)'>
-            <md-input required
+            <md-input-container required name="uname"
                 [dividerColor]=" (!uname.valid || uname.pristine) ? 'warn':'primary' " 
-                placeholder="Name" 
-                align="start" 
+                placeholder="Name">
+            <input mdInput
                 name="uname"
                 type="text"
                 #uname="ngModel"
                 [(ngModel)]="username"
                 pattern="[a-z]+ [a-z]{3,12}">
-            </md-input>
+            </md-input-container>
             <small [hidden]="uname.valid || (uname.pristine && !SignUpForm._submitted)" class="alert alert-danger">
                 Invalid Name! 
             </small>
@@ -21,16 +21,17 @@
                 Name is required!
             </small>
                 <br>
-            <md-input required
+            <md-input-container required
+                name="emlid"
                 [dividerColor]=" (!emlid.valid || emlid.pristine) ? 'warn':'primary' " 
-                placeholder="Email" 
-                align="start" 
+                placeholder="Email">
+            <input mdInput
                 name="emlid"
                 type="email"
                 #emlid="ngModel"
                 [(ngModel)]="emailUp"
                 pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
-            </md-input>
+            </md-input-container>
             <small [hidden]="emlid.valid || (emlid.pristine && !SignUpForm._submitted)" class="alert alert-danger">
                 Invalid Email! 
             </small>
@@ -38,16 +39,16 @@
                 Email is required!
             </small>
                 <br>
-            <md-input required
+            <md-input-container required name="pcode"
                 [dividerColor]="(!pcode.valid || pcode.pristine) ? 'warn':'primary'" 
-                placeholder="Password" 
-                align="start" 
+                placeholder="Password" >
+            <input mdInput
                 name="pcode"
                 type="password" 
                 #pcode="ngModel"
                 [(ngModel)]="passwordUp"
                 minlength="6">
-            </md-input>
+            </md-input-container>
             <small [hidden]="pcode.valid || (pcode.pristine && !SignUpForm._submitted)" class="alert alert-danger">
                 Password must be 6 characters long!
             </small>

@@ -1,10 +1,10 @@
-import { Level0Page } from './app.po';
+import { RecruitmentSystemPage } from './app.po';
 
-describe('level0 App', function() {
-  let page: Level0Page;
+describe('recruitment-system App', () => {
+  let page: RecruitmentSystemPage;
 
   beforeEach(() => {
-    page = new Level0Page();
+    page = new RecruitmentSystemPage();
   });
 
   it('should display message saying app works', () => {
